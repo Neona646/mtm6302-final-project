@@ -1,21 +1,21 @@
 
 const $customize = document.getElementById('customize');
-const $timer = document.getElementById('timer')
-const $date = document.getElementById('date')
+const $timer = document.getElementById('timer');
+const $date = document.getElementById('date');
 // Selecting with Jquery $(selector).action()
 
 let is24Hours = false
 
-const $twenty = document.getElementById('twenty')
-const $twelve = document.getElementById('twelve')
+const $twenty = document.getElementById('twenty');
+const $twelve = document.getElementById('twelve');
 
 $twenty.addEventListener('click', function(){
-    is24Hours = true
-})
+    is24Hours = true;
+});
 
 $twelve.addEventListener('click' , function() {
-    is24Hours = false
-})
+    is24Hours = false;
+});
 
 
 setInterval(function () {
@@ -35,6 +35,20 @@ $("#clock").css({
     } else if( is24Hours === false) {
     $clock.textContent = $blockA.toLocaleTimeString('en-US')
     }
+
+
+    const $month = document.getElementById('month')
+    $('.months').click(function(){
+        $month.textContent = $blockA.toDateString()
+    $("#month").css({
+        "color" : "white",
+        "position" : "absolute",
+        "left"  : "35%",
+        "top" : "70%",
+        "font-size" : "4rem", 
+    })
+    })
+    
  
 }, 1000)
 
@@ -45,17 +59,6 @@ $("#clock").css({
 
 
 
-
-$('.months').click(function(){
-    $month.textContent = $blockA.toDateString()
-$("#month").css({
-    "color" : "white",
-    "position" : "absolute",
-    "left"  : "35%",
-    "top" : "70%",
-    "font-size" : "4rem", 
-})
-})
 
 
 
@@ -81,7 +84,7 @@ function myTimer() {
 
 // Weeks and month 
 
-const $month = document.getElementById('month')
+
 /*$month.textContent = $blockA.toDateString()
 $("#month").css({
     "color" : "white",
